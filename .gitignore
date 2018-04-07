@@ -47,6 +47,5 @@ Thumbs.db
 *.ide-shm
 *.ide-wal
 
-OlyfauntClient/.vs/Olyfaunt/xs/UserPrefs.xml
-
-.vs/VSWorkspaceState.json
+.vs/
+# .vs/VSWorkspaceState.json
