@@ -4,16 +4,23 @@ using Xamarin.Forms;
 
 namespace Olyfaunt.Pages
 {
-    public class MyPage : ContentPage
+    public class FeedPage : ContentPage
     {
-        public MyPage()
+
+        ScrollView scroller;
+        StackLayout feedStack;
+
+
+        public FeedPage()
         {
-            Content = new StackLayout
-            {
-                Children = {
-                    new Label { Text = "Hello ContentPage" }
-                }
-            };
+            feedStack = new StackLayout();
+            scroller = new ScrollView();
+
+            for (int i = 0; i < 20; i++) {
+                feedStack.Children.Add(new Label { Text = "Label #" + i });
+            }
+
+            Content = scroller;
         }
     }
 }
