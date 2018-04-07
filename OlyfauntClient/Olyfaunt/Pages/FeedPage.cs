@@ -13,7 +13,6 @@ namespace Olyfaunt
 
         public FeedPage()
         {
-            NavigationPage.SetHasNavigationBar(this, true);
             Title = "Community Feed";
 
 
@@ -21,7 +20,7 @@ namespace Olyfaunt
             Padding = new Thickness(0, 5);
 
             for (int i = 0; i < 40; i++) {
-                feedStack.Children.Add(new UserUIElement("User #" + i));
+                feedStack.Children.Add(new EventUIElement(new Event("Event" + i, "Sick event bro", "April 20", "4:20 pm" )));
             }
 
             scroller = new ScrollView();

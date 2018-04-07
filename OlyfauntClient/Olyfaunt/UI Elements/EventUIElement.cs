@@ -14,7 +14,14 @@ namespace Olyfaunt
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
             // Make things to go in grid
-            Label titleLabel = new Label { Text = e.Name };
+            Label titleLabel = new Label 
+            { 
+                Text = e.Name,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
 
 
 
