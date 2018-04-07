@@ -12,8 +12,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)Olyfaunt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\FeedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignInSignUpPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UI Elements\UserUIElement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)UI Elements\" />
   </ItemGroup>
 </Project>
