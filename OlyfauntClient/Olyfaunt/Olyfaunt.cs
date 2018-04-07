@@ -9,22 +9,10 @@ namespace Olyfaunt
         public App()
         {
             // The root page of your application
-            var content = new ContentPage
-            {
-                Title = "Olyfaunt",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.Center,
-                    Children = {
-                        new Label {
-                            HorizontalTextAlignment = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
-                        }
-                    }
-                }
-            };
 
-            MainPage = new NavigationPage(content);
+            //var signInSignUp;
+
+            MainPage = new NavigationPage(new FeedPage());
         }
 
         protected override void OnStart()

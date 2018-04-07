@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace Olyfaunt.Pages
+namespace Olyfaunt
 {
     public class FeedPage : ContentPage
     {
@@ -14,11 +14,13 @@ namespace Olyfaunt.Pages
         public FeedPage()
         {
             feedStack = new StackLayout();
-            scroller = new ScrollView();
 
-            for (int i = 0; i < 20; i++) {
+            for (int i = 0; i < 40; i++) {
                 feedStack.Children.Add(new Label { Text = "Label #" + i });
             }
+
+            scroller = new ScrollView();
+            scroller.Content = feedStack;
 
             Content = scroller;
         }
