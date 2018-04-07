@@ -22,7 +22,7 @@ namespace Olyfaunt
             ItemsSource = new ObservableCollection<ContentPage> { new FeedPage()};
             */
             Children.Add(new FeedPage());
-            Children.Add(new SignInSignUpPage());
+            Children.Add(new PostPage());
         }
     }
 }

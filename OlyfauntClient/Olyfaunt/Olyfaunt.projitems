@@ -17,6 +17,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)UI Elements\ProblemUIElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI Elements\EventUIElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Event.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PostPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />

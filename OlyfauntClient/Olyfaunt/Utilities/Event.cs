@@ -4,6 +4,8 @@ namespace Olyfaunt
 {
     public class Event
     {
+        const int MAX_NUM_NAME_CHARS = 32;
+        const int MAX_NUM_DESC_CHARS = 100;
         private string name;
         private string description;
         private string date;    // For now have users fill these in-- ideally they would have a nice way to select them
@@ -13,7 +15,7 @@ namespace Olyfaunt
         {
             get { return name; }
         }
-        public string Descriptiotn
+        public string Description
         {
             get { return description; }
         }
@@ -28,8 +30,12 @@ namespace Olyfaunt
 
         public Event(string name, string description, string date, string time)
         {
-            this.name = name;
-            this.description = description;
+            if (name.Length <= MAX_NUM_NAME_CHARS) { this.name = name; }
+            else { throw new Exception("Too many chars in name"); }
+
+            if (description.Length <= MAX_NUM_DESC_CHARS) { this.description = description; }
+            else { throw new Exception("Too many chars in description"); }
+
             this.date = date;
             this.time = time;
         }
