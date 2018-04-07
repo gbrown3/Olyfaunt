@@ -11,7 +11,7 @@ namespace Olyfaunt
     {
         public MainTabbedPage()
         {
-            Title = "Community Feed";   // Initialize title to be Community Feed because that's the first page it'll be open to
+            Title = "Sign in";   // Initialize title to be Community Feed because that's the first page it'll be open to
 
             /*
             ItemTemplate = new DataTemplate(() =>

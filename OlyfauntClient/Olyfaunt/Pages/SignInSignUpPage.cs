@@ -8,10 +8,45 @@ namespace Olyfaunt
     {
         public SignInSignUpPage()
         {
+            Label title = new Label
+            {
+                Text = "Welcome to OLYFAUNT",
+                FontSize = Device.GetNamedSize (NamedSize.Large, typeof(EntryCell)),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+            var userName = new Entry
+            {
+                Placeholder = "Username"
+            };
+
+            var password = new Entry
+            {
+                Placeholder = "password",
+                IsPassword = true 
+            };
+
+            var loginButton = new Button
+            {
+                Text = "Log in"
+            };
+
+            loginButton.Clicked += (sender, e) =>
+            {
+                // TODO: verify and then accept/reject
+                Navigation.PushModalAsync(new MainTabbedPage());
+            };
+
             Content = new StackLayout
             {
-                Children = {
-                    new Label { Text = "Hello ContentPage" }
+                Children =
+                {
+                    title,
+                    userName,
+                    password,
+                    loginButton
+
                 }
             };
         }

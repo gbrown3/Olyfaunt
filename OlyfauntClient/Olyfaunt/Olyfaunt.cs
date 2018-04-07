@@ -12,7 +12,7 @@ namespace Olyfaunt
 
             //var signInSignUp;
 
-            MainPage = new NavigationPage(new MainTabbedPage());
+            MainPage = new SignInSignUpPage();
         }
 
         protected override void OnStart()
