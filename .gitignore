@@ -43,3 +43,5 @@ Thumbs.db
 *.lock
 *.sqlite
 *.sqlite-journal
+
+OlyfauntClient/.vs/Olyfaunt/xs/UserPrefs.xml
