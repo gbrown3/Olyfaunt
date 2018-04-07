@@ -11,18 +11,19 @@ namespace Olyfaunt
     {
         public MainTabbedPage()
         {
-            Title = "Sign in";   // Initialize title to be Community Feed because that's the first page it'll be open to
+            NavigationPage.SetHasNavigationBar(this, true);
+            //Title = ""; 
 
-            /*
-            ItemTemplate = new DataTemplate(() =>
-            {
-                return new ContentPage();
-            });
-
-            ItemsSource = new ObservableCollection<ContentPage> { new FeedPage()};
-            */
             Children.Add(new FeedPage());
             Children.Add(new PostPage());
+
         }
-    }
+
+		protected override void OnCurrentPageChanged()
+		{
+            base.OnCurrentPageChanged();
+            Title = CurrentPage.Title;
+		}
+
+	}
 }

@@ -35,7 +35,7 @@ namespace Olyfaunt
             loginButton.Clicked += (sender, e) =>
             {
                 // TODO: verify and then accept/reject
-                Navigation.PushModalAsync(new MainTabbedPage());
+                Navigation.PushModalAsync(new NavigationPage(new MainTabbedPage()));
             };
 
             Content = new StackLayout
