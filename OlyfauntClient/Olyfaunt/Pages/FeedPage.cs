@@ -13,10 +13,15 @@ namespace Olyfaunt
 
         public FeedPage()
         {
+            NavigationPage.SetHasNavigationBar(this, true);
+            Title = "Community Feed";
+
+
             feedStack = new StackLayout();
+            Padding = new Thickness(0, 5);
 
             for (int i = 0; i < 40; i++) {
-                feedStack.Children.Add(new Label { Text = "Label #" + i });
+                feedStack.Children.Add(new UserUIElement("User #" + i));
             }
 
             scroller = new ScrollView();
