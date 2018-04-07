@@ -14,7 +14,7 @@ namespace Olyfaunt
         public FeedPage()
         {
             Title = "Community Feed";
-
+            Icon = "house.png";
 
             feedStack = new StackLayout();
             Padding = new Thickness(0, 5);
