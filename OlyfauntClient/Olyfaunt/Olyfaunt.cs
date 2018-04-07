@@ -1,9 +1,13 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Olyfaunt
 {
+    public interface IAuthenticate
+    {
+        Task<bool> Authenticate();
+    }
     public class App : Application
     {
         public App()
@@ -13,6 +17,13 @@ namespace Olyfaunt
             //var signInSignUp;
 
             MainPage = new SignInSignUpPage();
+        }
+
+        public static IAuthenticate Authenticator { get; private set; }
+
+        public static void Init(IAuthenticate authenticator)
+        {
+            Authenticator = authenticator;
         }
 
         protected override void OnStart()
