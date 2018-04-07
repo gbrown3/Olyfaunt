@@ -23,7 +23,7 @@ namespace Olyfaunt
 
             var password = new Entry
             {
-                Placeholder = "password",
+                Placeholder = "Password",
                 IsPassword = true 
             };
 
