@@ -43,5 +43,10 @@ Thumbs.db
 *.lock
 *.sqlite
 *.sqlite-journal
+*.ide
+*.ide-shm
+*.ide-wal
 
 OlyfauntClient/.vs/Olyfaunt/xs/UserPrefs.xml
+
+.vs/VSWorkspaceState.json
