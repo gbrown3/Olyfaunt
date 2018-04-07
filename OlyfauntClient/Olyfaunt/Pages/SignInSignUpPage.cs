@@ -2,7 +2,7 @@
 
 using Xamarin.Forms;
 
-namespace Olyfaunt.Pages
+namespace Olyfaunt
 {
     public class SignInSignUpPage : ContentPage
     {
