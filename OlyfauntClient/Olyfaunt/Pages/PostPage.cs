@@ -22,17 +22,24 @@ namespace Olyfaunt
 
             pickPictureButton.Clicked += async (sender, e) => 
             {
+                System.Diagnostics.Debug.WriteLine("Button was clicked");
                 pickPictureButton.IsEnabled = false;
+
+                System.Diagnostics.Debug.WriteLine("About to run IPicturePicker stream");
                 Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
+                System.Diagnostics.Debug.WriteLine("Finished running IPicturePickerStream");
 
                 if (stream != null)
                 {
+                    System.Diagnostics.Debug.WriteLine("Image Stream wasn't null!");
+
                     Image image = new Image
                     {
                         Source = ImageSource.FromStream(() => stream),
                         BackgroundColor = Color.Gray
                     };
 
+                    /*
                     TapGestureRecognizer recognizer = new TapGestureRecognizer();
                     recognizer.Tapped += (sender2, args) =>
                     {
@@ -41,10 +48,14 @@ namespace Olyfaunt
                     };
                     image.GestureRecognizers.Add(recognizer);
 
+
                     (this as ContentPage).Content = image;
+                    */
+                    stack.Children.Add(image);
                 }
                 else
                 {
+                    System.Diagnostics.Debug.WriteLine("Image Stream was null!");
                     pickPictureButton.IsEnabled = true;
                 }
             };
