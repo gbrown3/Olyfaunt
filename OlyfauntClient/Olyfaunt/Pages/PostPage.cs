@@ -50,10 +50,8 @@ namespace Olyfaunt
 
                 PostProblem(new Problem(image));
             }
-            else
-            {
-                (sender as Button).IsEnabled = true;
-            }
+
+            (sender as Button).IsEnabled = true;
         }
 
         /// <summary>
