@@ -9,13 +9,54 @@ namespace Olyfaunt
 {
 	public class ViewProfile : ContentPage
 	{
-		public ViewProfile ()
+        User user;
+        StackLayout stack;
+
+		public ViewProfile (User user)
 		{
-			Content = new StackLayout {
-				Children = {
-					new Label { Text = "Welcome to Xamarin.Forms!" }
-				}
-			};
+            this.user = user;
+            Image image = user.profileImage;
+            Label name = new Label()
+            {
+                Text = user.Username,
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+            Label NEEDS = new Label()
+            {
+                Text = "Needs:",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            }; Label WANTS = new Label()
+            {
+                Text = "Wants:",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            }; Label LIKES = new Label()
+            {
+                Text = "Likes:",
+                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+
+
+            stack = new StackLayout();
+            var grid = new Grid();
+            grid.Children.Add(image, 0, 0);
+            grid.Children.Add(name, 0, 2);
+            grid.Children.Add(NEEDS, 0, 4);
+            grid.Children.Add(WANTS, 0, 6);
+            grid.Children.Add(LIKES, 0, 8);
+
+            
+
+            stack.Children.Add(grid);
+
+            
+            Content = stack;
 		}
 	}
 }
