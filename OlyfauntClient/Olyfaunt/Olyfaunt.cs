@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using Olyfaunt.Abstractions;
+using Olyfaunt.Services;
 using Xamarin.Forms;
 
 namespace Olyfaunt
@@ -16,8 +18,11 @@ namespace Olyfaunt
 
     public class App : Application
     {
+        public static ICloudService CloudService { get; set; }
+
         public App()
         {
+            CloudService = new AzureCloudService();
             MainPage = new NavigationPage (new SignInSignUpPage());
         }
 
