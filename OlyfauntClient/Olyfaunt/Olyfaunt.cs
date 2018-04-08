@@ -23,7 +23,7 @@ namespace Olyfaunt
         public App()
         {
             CloudService = new AzureCloudService();
-            MainPage = new NavigationPage (new SignInSignUpPage());
+            MainPage = new NavigationPage (new MainTabbedPage());
         }
 
         public static IAuthenticate Authenticator { get; private set; }
