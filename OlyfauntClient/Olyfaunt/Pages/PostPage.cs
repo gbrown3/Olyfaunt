@@ -17,57 +17,40 @@ namespace Olyfaunt
 
             StackLayout stack = new StackLayout();
 
-            Button pickPictureButton = new Button
+            Button makeAnEventButton = new Button
             {
-                Text = "Choose a picture",
+                Text = "MAKE AN EVENT",
+                TextColor = Color.White,
+                BackgroundColor = Color.Blue,
+                HorizontalOptions = LayoutOptions.CenterAndExpand,
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            Button reportAProblemButton = new Button
+            {
+                Text = "REPORT A PROBLEM",
+                TextColor = Color.White,
+                BackgroundColor = Color.Red,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
-            pickPictureButton.Clicked += OnPickPictureButtonClicked;
+            makeAnEventButton.Clicked += delegate { GoToMakeEventPage(); };
+            reportAProblemButton.Clicked += delegate { GoToReportProblemPage(); };
 
-
-            stack.Children.Add(pickPictureButton);
+            stack.Children.Add(makeAnEventButton);
+            stack.Children.Add(reportAProblemButton);
 
             Content = stack;
         }
 
-
-
-
-        async void OnPickPictureButtonClicked (object sender, EventArgs e)
+        async void GoToReportProblemPage()
         {
-            (sender as Button).IsEnabled = false;
-
-            System.Diagnostics.Debug.WriteLine("About to get stream");
-            Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
-            System.Diagnostics.Debug.WriteLine("Finished getting stream");
-
-            if (stream != null)
-            {
-                System.Diagnostics.Debug.WriteLine("Stream is not null");
-                Image image = new Image
-                {
-                    Source = ImageSource.FromStream(() => stream),
-                    BackgroundColor = Color.Gray
-                };
-
-                User placeholderUser = new User();
-                placeholderUser.Username = "John Smith";
-                PostProblem(new Problem(placeholderUser, image));    // TODO: replace this with the current app user
-            }
-
-            (sender as Button).IsEnabled = true;
+            await Navigation.PushAsync(new ReportProblemPage(feedPage, (this.Parent as TabbedPage)));
         }
 
-        /// <summary>
-        /// Post problem to community feed and go back to community feed
-        /// </summary>
-        /// <param name="problem">Problem.</param>
-        private void PostProblem(Problem problem)
+        async void GoToMakeEventPage()
         {
-            feedPage.AddUIElementToTop(new ProblemUIElement(problem));
-            (this.Parent as TabbedPage).CurrentPage = feedPage;
+            await Navigation.PushAsync(new MakeEventPage(feedPage));
         }
     }
 }

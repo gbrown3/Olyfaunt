@@ -29,6 +29,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Problem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\CommunityPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ReportProblemPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MakeEventPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
