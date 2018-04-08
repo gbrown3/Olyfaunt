@@ -46,17 +46,17 @@ namespace Olyfaunt
 
             Label NEEDS = new Label()
             {
-                Text = "Needs:",
+                Text = "Needs: " + needs,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             }; Label WANTS = new Label()
             {
-                Text = "Wants:",
+                Text = "Wants: " + wants,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             }; Label LIKES = new Label()
             {
-                Text = "Likes:",
+                Text = "Likes: " + likes,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
