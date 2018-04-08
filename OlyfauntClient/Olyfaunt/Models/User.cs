@@ -35,9 +35,9 @@ namespace Olyfaunt
             Likes.Add(like);
         }
 
-        public User()
+        public User(string picpath)
         {
-            profileImage = new Image { Source = "default_profile_pic.png" };
+            profileImage = new Image { Source = picpath };
         }
     }
 }
