@@ -23,6 +23,7 @@ namespace OlyfauntService.Models
         } 
 
         public DbSet<User> Users { get; set; }
+        public DbSet<TodoItem> TodoItems { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

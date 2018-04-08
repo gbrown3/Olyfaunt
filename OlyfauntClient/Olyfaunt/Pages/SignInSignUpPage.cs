@@ -6,6 +6,9 @@ namespace Olyfaunt
 {
     public class SignInSignUpPage : ContentPage
     {
+        bool authenticated = false;
+        Button loginButton;
+
         public SignInSignUpPage()
         {
             Label title = new Label
@@ -27,15 +30,23 @@ namespace Olyfaunt
                 IsPassword = true 
             };
 
-            var loginButton = new Button
+            loginButton = new Button
             {
                 Text = "Log in"
             };
 
-            loginButton.Clicked += (sender, e) =>
+
+            loginButton.Clicked += async (sender, e) =>
             {
                 // TODO: verify and then accept/reject
-                Navigation.PushModalAsync(new MainTabbedPage());
+                if (App.Authenticator != null)
+                {
+                    authenticated = await App.Authenticator.Authenticate();
+                }
+                if (authenticated == true)
+                {
+                    await Navigation.PushModalAsync(new MainTabbedPage());
+                }
             };
 
             Content = new StackLayout
@@ -49,6 +60,20 @@ namespace Olyfaunt
 
                 }
             };
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Go straight to home page if already logged in
+            if(authenticated == true)
+            {
+                await Navigation.PushModalAsync(new MainTabbedPage());
+
+                // Hide the sign-in button
+                this.loginButton.IsVisible = false;
+            }
         }
     }
 }

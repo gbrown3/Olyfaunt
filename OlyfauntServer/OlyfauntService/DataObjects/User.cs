@@ -4,8 +4,9 @@ namespace OlyfauntService.DataObjects
 {
     public class User : EntityData
     {
-        public int UserID { get; set; }
+        public string UserID { get; set; }
         public string Username { get; set; }
+        public string Bio { get; set; }
 
     }
 }
