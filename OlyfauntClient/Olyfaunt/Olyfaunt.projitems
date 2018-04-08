@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClientUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PostPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\Problem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\User.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
