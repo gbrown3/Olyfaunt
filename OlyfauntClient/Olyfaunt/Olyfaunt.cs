@@ -18,7 +18,8 @@ namespace Olyfaunt
     {
         public App()
         {
-            MainPage = new NavigationPage (new SignInSignUpPage());
+            MainPage = new NavigationPage(new MainTabbedPage());
+            //MainPage = new NavigationPage (new SignInSignUpPage());
         }
 
         public static IAuthenticate Authenticator { get; private set; }
