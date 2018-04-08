@@ -148,6 +148,10 @@
     <BundleResource Include="Resources\house.png" />
     <BundleResource Include="Resources\community_members.png" />
     <BundleResource Include="Resources\default_profile_pic.png" />
+    <BundleResource Include="Resources\agree.png" />
+    <BundleResource Include="Resources\disagree.png" />
+    <BundleResource Include="Resources\i_did_it.png" />
+    <BundleResource Include="Resources\i_fixed_it.png" />
   </ItemGroup>
   <Import Project="..\Olyfaunt\Olyfaunt.projitems" Label="Shared" Condition="Exists('..\Olyfaunt\Olyfaunt.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

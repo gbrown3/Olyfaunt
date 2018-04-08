@@ -192,6 +192,10 @@
     <AndroidResource Include="Resources\drawable\house.png" />
     <AndroidResource Include="Resources\drawable\community_members.png" />
     <AndroidResource Include="Resources\drawable\default_profile_pic.png" />
+    <AndroidResource Include="Resources\drawable\agree.png" />
+    <AndroidResource Include="Resources\drawable\disagree.png" />
+    <AndroidResource Include="Resources\drawable\i_did_it.png" />
+    <AndroidResource Include="Resources\drawable\i_fixed_it.png" />
   </ItemGroup>
   <Import Project="..\Olyfaunt\Olyfaunt.projitems" Label="Shared" Condition="Exists('..\Olyfaunt\Olyfaunt.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
