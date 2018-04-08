@@ -22,16 +22,16 @@ namespace Olyfaunt
                 Text = "MAKE AN EVENT",
                 TextColor = Color.White,
                 BackgroundColor = Color.Blue,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.EndAndExpand
             };
             Button reportAProblemButton = new Button
             {
                 Text = "REPORT A PROBLEM",
                 TextColor = Color.White,
                 BackgroundColor = Color.Red,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.End
             };
 
             makeAnEventButton.Clicked += delegate { GoToMakeEventPage(); };
