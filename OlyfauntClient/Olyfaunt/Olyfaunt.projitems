@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\ICloudService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\ICloudTable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Abstractions\ILoginProvider.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\TableData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Olyfaunt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\FeedPage.cs" />
@@ -26,10 +27,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PostPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Problem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceLocator.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\CommunityPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)UI Elements\" />
   </ItemGroup>
 </Project>

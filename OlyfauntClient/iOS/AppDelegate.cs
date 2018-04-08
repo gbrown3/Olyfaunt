@@ -19,5 +19,6 @@ namespace Olyfaunt.iOS
 
             return base.FinishedLaunching(app, options);
         }
+
     }
 }

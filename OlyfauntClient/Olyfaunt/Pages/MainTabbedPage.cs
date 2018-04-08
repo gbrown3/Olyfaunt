@@ -12,6 +12,7 @@ namespace Olyfaunt
         public MainTabbedPage()
         {
             NavigationPage.SetHasNavigationBar(this, true);
+            Title = "Community Feed";
 
             FeedPage feedPage = new FeedPage();
             Children.Add(feedPage);
