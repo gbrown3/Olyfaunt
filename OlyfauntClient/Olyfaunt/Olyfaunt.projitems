@@ -16,12 +16,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\MainTabbedPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI Elements\ProblemUIElement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)UI Elements\EventUIElement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Utilities\ClientUser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Event.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PostPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)UI Elements\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Utilities\" />
   </ItemGroup>
 </Project>
