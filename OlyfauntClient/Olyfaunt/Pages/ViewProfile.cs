@@ -18,6 +18,24 @@ namespace Olyfaunt
             //NavigationPage.SetHasNavigationBar(this, true);
             NavigationPage.SetHasBackButton(this, true);
             Image image = user.profileImage;
+            string wants = "";
+            foreach (string text in user.Wants)
+            {
+                wants += (text + " ");
+            }
+
+            string needs = "";
+            foreach (string text in user.Needs)
+            {
+                needs += (text + " ");
+            }
+
+            string likes = "";
+            foreach (string text in user.Likes)
+            {
+                likes += (text + " ");
+            }
+
             Label name = new Label()
             {
                 Text = user.Username,
@@ -29,17 +47,17 @@ namespace Olyfaunt
             Label NEEDS = new Label()
             {
                 Text = "Needs:",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             }; Label WANTS = new Label()
             {
                 Text = "Wants:",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             }; Label LIKES = new Label()
             {
                 Text = "Likes:",
-                FontSize = Device.GetNamedSize(NamedSize.Large, typeof(EntryCell)),
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
