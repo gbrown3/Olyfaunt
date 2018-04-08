@@ -20,6 +20,8 @@ namespace Olyfaunt
     {
         public static ICloudService CloudService { get; set; }
 
+        //public static User currentUser = new User();   // TODO: replace this and everything that uses it with database calls
+
         public App()
         {
             CloudService = new AzureCloudService();

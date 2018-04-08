@@ -20,8 +20,9 @@ namespace Olyfaunt
         }
 
 
-        public Problem(Image problemImage)
+        public Problem(User reportingUser, Image problemImage)
         {
+            this.reportingUser = reportingUser;
             this.problemImage = problemImage;
         }
     }

@@ -9,6 +9,8 @@ namespace Olyfaunt
     {
         public ProblemUIElement(Problem problem)
         {
+            BackgroundColor = Color.Red;
+
             // Initialize layout
             HeightRequest = 200;
             HorizontalOptions = LayoutOptions.FillAndExpand;
@@ -33,12 +35,12 @@ namespace Olyfaunt
 
             Label problemTitleLabel = new Label
             {
-                Text = "thinks this is a\nPROBLEM",
+                Text = "thinks this is a PROBLEM",
                 TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalOptions = LayoutOptions.Fill,
-                VerticalOptions = LayoutOptions.Fill
+                HorizontalOptions = LayoutOptions.FillAndExpand,
+                VerticalOptions = LayoutOptions.FillAndExpand
             };
             Grid.SetColumnSpan(problemTitleLabel, 3);
             Grid.SetRowSpan(problemTitleLabel, 2);
@@ -46,7 +48,12 @@ namespace Olyfaunt
             Children.Add(problemTitleLabel, 1, 0);
 
 
-            //Image profileImage = problem.ReportingUser
+            Image profileImage = problem.ReportingUser.profileImage;
+            Children.Add(profileImage, 0, 0);
+            Grid.SetRowSpan(profileImage, 2);
+
+
+
         }
     }
 }
