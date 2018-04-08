@@ -57,12 +57,13 @@ namespace Olyfaunt
         }
 
         /// <summary>
-        /// Post problem to community feed
+        /// Post problem to community feed and go back to community feed
         /// </summary>
         /// <param name="problem">Problem.</param>
         private void PostProblem(Problem problem)
         {
             feedPage.AddUIElementToTop(new ProblemUIElement(problem));
+            (this.Parent as TabbedPage).CurrentPage = feedPage;
         }
     }
 }

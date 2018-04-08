@@ -10,6 +10,10 @@ namespace Olyfaunt
         public ProblemUIElement(Problem problem)
         {
             // Initialize layout
+            HeightRequest = 200;
+            HorizontalOptions = LayoutOptions.FillAndExpand;
+            VerticalOptions = LayoutOptions.FillAndExpand;
+
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
