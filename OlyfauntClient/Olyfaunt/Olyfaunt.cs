@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
@@ -10,17 +11,13 @@ namespace Olyfaunt
     }
     public interface IPicturePicker
     {
-        Task<StreamImageSource> GetImageStreamAsync();      // May need to change the type of stream
+        Task<Stream> GetImageStreamAsync();      // May need to change the type of stream
     }
 
     public class App : Application
     {
         public App()
         {
-            // The root page of your application
-
-            //var signInSignUp;
-
             MainPage = new NavigationPage (new SignInSignUpPage());
         }
 
