@@ -2,6 +2,6 @@
 {
     public interface ICloudService
     {
-        ICloudTable<T> GetTable<T> where T : TableData;
+        ICloudTable<T> GetTable<T>() where T : TableData;
     }
 }
