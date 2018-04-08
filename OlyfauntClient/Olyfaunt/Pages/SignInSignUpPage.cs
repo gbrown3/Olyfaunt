@@ -11,6 +11,8 @@ namespace Olyfaunt
 
         public SignInSignUpPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
+
             Label title = new Label
             {
                 Text = "Welcome to OLYFAUNT",
@@ -26,7 +28,7 @@ namespace Olyfaunt
 
             var password = new Entry
             {
-                Placeholder = "password",
+                Placeholder = "Password",
                 IsPassword = true 
             };
 
@@ -38,7 +40,6 @@ namespace Olyfaunt
 
             loginButton.Clicked += async (sender, e) =>
             {
-                // TODO: verify and then accept/reject
                 if (App.Authenticator != null)
                 {
                     authenticated = await App.Authenticator.Authenticate();
