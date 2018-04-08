@@ -8,6 +8,11 @@ namespace Olyfaunt
     {
         Task<bool> Authenticate();
     }
+    public interface IPicturePicker
+    {
+        Task<StreamImageSource> GetImageStreamAsync();      // May need to change the type of stream
+    }
+
     public class App : Application
     {
         public App()
