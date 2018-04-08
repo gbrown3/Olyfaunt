@@ -15,9 +15,10 @@ namespace Olyfaunt
         {
             Title = "Community Feed";
             Icon = "house.png";
+            //BackgroundColor = Color.Black;
 
             feedStack = new StackLayout();
-            Padding = new Thickness(0, 5);
+            Padding = new Thickness(5, 5);
 
             for (int i = 0; i < 40; i++) {
                 feedStack.Children.Add(new EventUIElement(new Event("Event" + i, "Sick event bro", "April 20", "4:20 pm" )));

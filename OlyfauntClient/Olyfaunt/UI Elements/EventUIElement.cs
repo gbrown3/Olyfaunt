@@ -8,6 +8,7 @@ namespace Olyfaunt
         public EventUIElement(Event e)
         {
             // Initialize layout
+            BackgroundColor = Color.FromHex("56A6F1");
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
@@ -17,10 +18,11 @@ namespace Olyfaunt
             Label titleLabel = new Label 
             { 
                 Text = e.Name,
+                TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
-                HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
             };
 
 
@@ -33,6 +35,7 @@ namespace Olyfaunt
             Label whatLabel = new Label
             {
                 Text = "What: ",
+                TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -41,6 +44,7 @@ namespace Olyfaunt
             Label descriptionLabel = new Label
             {
                 Text = e.Description,
+                TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -60,6 +64,7 @@ namespace Olyfaunt
             Label whenLabel = new Label                         
             {
                 Text = "When: ",            
+                TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
@@ -68,6 +73,7 @@ namespace Olyfaunt
             Label dateLabel = new Label
             {
                 Text = e.Date + "\nat " + e.Time,
+                TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
