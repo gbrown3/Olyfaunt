@@ -35,8 +35,10 @@ namespace Olyfaunt
         public App()
         {
             ServiceLocator.Instance.Add<ICloudService, AzureCloudService>();
+            Database = new List<User>();
             SeedDatabase();
-            MainPage = new NavigationPage (new SignInSignUpPage());
+            MainPage = new NavigationPage(new MainTabbedPage());
+            //MainPage = new NavigationPage (new SignInSignUpPage());
         }
 
         protected override void OnStart()

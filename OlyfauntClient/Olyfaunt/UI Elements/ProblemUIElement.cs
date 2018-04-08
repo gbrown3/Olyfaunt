@@ -53,7 +53,10 @@ namespace Olyfaunt
             Children.Add(profileImage, 0, 0);
             Grid.SetRowSpan(profileImage, 2);
 
-
+            Children.Add(new Image { Source = "agree.png" }, 0, 3 );
+            Children.Add(new Image { Source = "disagree.png" }, 1, 3);
+            Children.Add(new Image { Source = "i_did_it.png" }, 2, 3);
+            Children.Add(new Image { Source = "i_fixed_it.png" }, 3, 3);
 
         }
     }

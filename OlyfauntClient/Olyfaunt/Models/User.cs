@@ -20,12 +20,28 @@ namespace Olyfaunt
         public List<string> Likes { get; private set; }
         public Image profileImage { get; set; }
 
+
+        public User(string picpath)
+        {
+            profileImage = new Image { Source = picpath };
+            Needs = new List<string>();
+            Wants = new List<string>();
+            Likes = new List<string>();
+        }
+        public User()
+        {
+            profileImage = new Image { Source = "default_profile_pic.png" };
+            Needs = new List<string>();
+            Wants = new List<string>();
+            Likes = new List<string>();
+        }
+
         public void AddNeed(string need)
         {
             Needs.Add(need);
         }
-            
-        public void AddWant (string want)
+
+        public void AddWant(string want)
         {
             Wants.Add(want);
         }
@@ -33,11 +49,6 @@ namespace Olyfaunt
         public void AddLike(string like)
         {
             Likes.Add(like);
-        }
-
-        public User(string picpath)
-        {
-            profileImage = new Image { Source = picpath };
         }
     }
 }

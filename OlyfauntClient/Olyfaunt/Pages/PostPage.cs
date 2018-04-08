@@ -39,9 +39,13 @@ namespace Olyfaunt
         {
             (sender as Button).IsEnabled = false;
 
+            System.Diagnostics.Debug.WriteLine("About to get stream");
             Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
+            System.Diagnostics.Debug.WriteLine("Finished getting stream");
+
             if (stream != null)
             {
+                System.Diagnostics.Debug.WriteLine("Stream is not null");
                 Image image = new Image
                 {
                     Source = ImageSource.FromStream(() => stream),
