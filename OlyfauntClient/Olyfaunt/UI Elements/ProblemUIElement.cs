@@ -1,6 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-namespace Olyfaunt.UIElements
+namespace Olyfaunt
 {
     /// <summary>
     /// UI Element to display a problem, as well as ways to react to it 
@@ -10,7 +10,10 @@ namespace Olyfaunt.UIElements
         public ProblemUIElement(Problem problem)
         {
             // Initialize layout
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
+            Children.Add(problem.ProblemImage, 0, 0);
         }
     }
 }

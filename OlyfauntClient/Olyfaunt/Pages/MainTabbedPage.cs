@@ -12,10 +12,10 @@ namespace Olyfaunt
         public MainTabbedPage()
         {
             NavigationPage.SetHasNavigationBar(this, true);
-            //Title = ""; 
 
-            Children.Add(new FeedPage());
-            Children.Add(new PostPage());
+            FeedPage feedPage = new FeedPage();
+            Children.Add(feedPage);
+            Children.Add(new PostPage(feedPage));
 
         }
 
