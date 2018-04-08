@@ -16,6 +16,7 @@ namespace Olyfaunt
             FeedPage feedPage = new FeedPage();
             Children.Add(feedPage);
             Children.Add(new PostPage(feedPage));
+            Children.Add(new CommunityPage());
 
         }
 

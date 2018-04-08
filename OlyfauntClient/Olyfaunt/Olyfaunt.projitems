@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PostPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\Problem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utilities\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\CommunityPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
