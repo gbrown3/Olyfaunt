@@ -8,6 +8,8 @@ namespace Olyfaunt
     {
         public SignInSignUpPage()
         {
+            NavigationPage.SetHasNavigationBar(this, false);
+
             Label title = new Label
             {
                 Text = "Welcome to OLYFAUNT",
