@@ -3,6 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using Olyfaunt.Abstractions;
 using Olyfaunt.Services;
+using Olyfaunt.Helpers;
+using System.Diagnostics;
+
 using Xamarin.Forms;
 
 namespace Olyfaunt
@@ -11,6 +14,7 @@ namespace Olyfaunt
     {
         Task<bool> Authenticate();
     }
+
     public interface IPicturePicker
     {
         Task<Stream> GetImageStreamAsync();      // May need to change the type of stream
@@ -18,19 +22,17 @@ namespace Olyfaunt
 
     public class App : Application
     {
-        public static ICloudService CloudService { get; set; }
-
-        public App()
-        {
-            CloudService = new AzureCloudService();
-            MainPage = new NavigationPage (new MainTabbedPage());
-        }
-
         public static IAuthenticate Authenticator { get; private set; }
 
         public static void Init(IAuthenticate authenticator)
         {
             Authenticator = authenticator;
+        }
+
+        public App()
+        {
+            ServiceLocator.Instance.Add<ICloudService, AzureCloudService>();
+            MainPage = new NavigationPage (new SignInSignUpPage());
         }
 
         protected override void OnStart()

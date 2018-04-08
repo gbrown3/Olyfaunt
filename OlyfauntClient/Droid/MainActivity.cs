@@ -8,6 +8,10 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+using Olyfaunt.Droid.Services;
+using Olyfaunt.Abstractions;
+using Xamarin.Forms;
+
 namespace Olyfaunt.Droid
 {
     [Activity(Label = "Olyfaunt.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -19,8 +23,6 @@ namespace Olyfaunt.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
-
-            Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 

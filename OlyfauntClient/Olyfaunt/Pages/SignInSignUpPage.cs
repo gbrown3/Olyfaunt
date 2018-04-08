@@ -40,14 +40,7 @@ namespace Olyfaunt
 
             loginButton.Clicked += async (sender, e) =>
             {
-                if (App.Authenticator != null)
-                {
-                    authenticated = await App.Authenticator.Authenticate();
-                }
-                if (authenticated == true)
-                {
-                    await Navigation.PushModalAsync(new MainTabbedPage());
-                }
+                await Navigation.PushModalAsync(new MainTabbedPage());
             };
 
             Content = new StackLayout

@@ -17,12 +17,13 @@ namespace OlyfauntService
         public static void ConfigureMobileApp(IAppBuilder app)
         {
             HttpConfiguration config = new HttpConfiguration();
+            var mobileConfig = new MobileAppConfiguration();
 
             //For more information on Web API tracing, see http://go.microsoft.com/fwlink/?LinkId=620686 
             config.EnableSystemDiagnosticsTracing();
 
-            new MobileAppConfiguration()
-                .UseDefaultConfiguration()
+            mobileConfig
+                .AddTablesWithEntityFramework()
                 .ApplyTo(config);
 
             // Use Entity Framework Code First to create database tables based on your DbContext

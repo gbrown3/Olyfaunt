@@ -1,4 +1,5 @@
-﻿using Microsoft.Azure.Mobile.Server;
+﻿using System.Collections.Generic;
+using Microsoft.Azure.Mobile.Server;
 
 namespace OlyfauntService.DataObjects
 {

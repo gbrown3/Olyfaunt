@@ -141,6 +141,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="PicturePickerImplementation.cs" />
+    <Compile Include="Services\iOSLoginProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\plus.png" />
