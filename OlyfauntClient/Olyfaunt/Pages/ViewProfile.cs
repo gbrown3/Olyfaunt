@@ -17,7 +17,7 @@ namespace Olyfaunt
             this.user = user;
             //NavigationPage.SetHasNavigationBar(this, true);
             NavigationPage.SetHasBackButton(this, true);
-            Image image = user.profileImage;
+            Image image = new Image { Source = user.picpath };
             string wants = "";
             foreach (string text in user.Wants)
             {
@@ -129,7 +129,6 @@ namespace Olyfaunt
 		protected override bool OnBackButtonPressed()
 		{
             //(this.Parent as CommunityPage)
-
             return base.OnBackButtonPressed();
 		}
 	}

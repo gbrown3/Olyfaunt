@@ -27,5 +27,16 @@ namespace Olyfaunt
             scroller.Content = stack;
             Content = scroller;
         }
+
+        public void resetStack()
+        {
+            resetStack();
+            foreach (User user in App.Database)
+            {
+                stack.Children.Add(new UserUIElement(user));
+            }
+            scroller.Content = stack;
+            Content = scroller;
+        }
     }
 }

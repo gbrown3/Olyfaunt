@@ -15,6 +15,7 @@ namespace Olyfaunt
     {
         public string Username { get; set; }
         public string Bio { get; set; }
+        public string picpath { get; set; }
         public List<string> Needs { get; private set; }
         public List<string> Wants { get; private set; }
         public List<string> Likes { get; private set; }
@@ -27,6 +28,7 @@ namespace Olyfaunt
             Needs = new List<string>();
             Wants = new List<string>();
             Likes = new List<string>();
+            this.picpath = picpath;
         }
         public User()
         {
