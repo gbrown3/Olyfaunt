@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Olyfaunt.Abstractions;
 
 
-namespace Olyfaunt.Utilities
+namespace Olyfaunt
 {
     /**
      * This class is the client side class for the user. 
@@ -33,6 +33,11 @@ namespace Olyfaunt.Utilities
         public void AddLike(string like)
         {
             Likes.Add(like);
+        }
+
+        public User()
+        {
+            profileImage = new Image { Source = "default_profile_pic.png" };
         }
     }
 }

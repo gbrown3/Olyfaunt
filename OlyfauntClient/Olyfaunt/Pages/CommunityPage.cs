@@ -12,6 +12,7 @@ namespace Olyfaunt
         public CommunityPage()
         {
             Title = "My Community";
+            Icon = "community_members.png";
 
             stack = new StackLayout();
             scroller = new ScrollView();
@@ -20,7 +21,9 @@ namespace Olyfaunt
 
             for (int i = 0; i < 40; i++)
             {
-                stack.Children.Add(new EventUIElement(new Event("Event" + i, "Sick event bro", "April 20", "4:20 pm")));
+                User exampleUser = new User();
+                exampleUser.Username = "User # " + i;
+                stack.Children.Add(new UserUIElement(exampleUser));
             }
 
             scroller.Content = stack;
