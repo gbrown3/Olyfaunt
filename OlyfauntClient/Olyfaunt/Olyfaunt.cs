@@ -58,7 +58,7 @@ namespace Olyfaunt
 
         void SeedDatabase()
         {
-            User user1 = new User("lit-mike.jpg");
+            User user1 = new User("lit-mike.png");
             user1.Username = "LitMike17";
             user1.Bio = "I like to party";
             user1.Id = user1.GetHashCode().ToString();

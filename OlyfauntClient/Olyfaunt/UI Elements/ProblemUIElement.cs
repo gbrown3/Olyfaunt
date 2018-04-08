@@ -54,30 +54,83 @@ namespace Olyfaunt
             Children.Add(profileImage, 0, 0);
             Grid.SetRowSpan(profileImage, 2);
 
-            Children.Add(new Image 
-            { 
-                Source = "agree.png", 
+
+            Button agreeButton = new Button
+            {
+                Image = "agree.png",
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
-            }, 0, 3 );
-            Children.Add(new Image 
-            { 
-                Source = "disagree.png",
+            };
+            Button disagreeButton = new Button
+            {
+                Image = "disagree.png",
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
-            }, 1, 3);
-            Children.Add(new Image 
-            { 
-                Source = "i_did_it.png",
+            };
+            Button iDidItButton = new Button
+            {
+                Image = "i_did_it.png",
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
-            }, 2, 3);
-            Children.Add(new Image 
-            { 
-                Source = "i_fixed_it.png",
+            };
+            Button iFixedItButton = new Button
+            {
+                Image = "i_fixed_it.png",
                 HorizontalOptions = LayoutOptions.Center,
                 VerticalOptions = LayoutOptions.Center
-            }, 3, 3);
+            };
+
+            // Note: I know theres a better way to do this. I don't care rn
+            agreeButton.Clicked += (sender, e) => 
+            {
+                System.Diagnostics.Debug.WriteLine("Agree image tostring: " + agreeButton.Image.ToString());
+                if (agreeButton.Image.ToString().Equals("File: agree.png"))
+                {
+                    agreeButton.Image = "agree_tapped.png";
+                }
+                else
+                {
+                    agreeButton.Image = "agree.png";
+                }
+            };
+            disagreeButton.Clicked += (sender, e) =>
+            {
+                if (disagreeButton.Image.ToString().Equals("File: disagree.png"))
+                {
+                    disagreeButton.Image = "disagree_tapped.png";
+                }
+                else
+                {
+                    disagreeButton.Image = "disagree.png";
+                }
+            };
+            iDidItButton.Clicked += (sender, e) =>
+            {
+                if (iDidItButton.Image.ToString().Equals("File: i_did_it.png"))
+                {
+                    iDidItButton.Image = "i_did_it_tapped.png";
+                }
+                else
+                {
+                    iDidItButton.Image = "i_did_it.png";
+                }
+            };
+            iFixedItButton.Clicked += (sender, e) =>
+            {
+                if (iFixedItButton.Image.ToString().Equals("File: i_fixed_it.png"))
+                {
+                    iFixedItButton.Image = "i_fixed_it_tapped.png";
+                }
+                else
+                {
+                    iFixedItButton.Image = "i_fixed_it.png";
+                }
+            };
+
+            Children.Add(agreeButton, 0, 3 );
+            Children.Add(disagreeButton, 1, 3);
+            Children.Add(iDidItButton, 2, 3);
+            Children.Add(iFixedItButton, 3, 3);
 
         }
     }

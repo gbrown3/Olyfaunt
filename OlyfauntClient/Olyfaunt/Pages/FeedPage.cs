@@ -42,6 +42,7 @@ namespace Olyfaunt
                 "4/14/2018", 
                 "7:00 PM"
             )));
+            feedStack.Children.Add(new ProblemUIElement(new Problem(App.Database[0], new Image { Source = "dirty_dishes.jpg" })));
             feedStack.Children.Add(new EventUIElement(new Event(
                 "Watch Mr. Robot",
                 "I'm trying to catch up on Mr.Robot in the lounge, if anyone feels like joining I can make some popcorn",

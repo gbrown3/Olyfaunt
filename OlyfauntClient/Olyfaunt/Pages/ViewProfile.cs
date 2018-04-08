@@ -44,39 +44,93 @@ namespace Olyfaunt
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
+            Label needsTitle = new Label()
+            {
+                Text = "Needs: ",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
             Label NEEDS = new Label()
             {
-                Text = "Needs: " + needs,
+                Text = needs,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
-            }; Label WANTS = new Label()
+            };
+            StackLayout needStack = new StackLayout 
+            { 
+                Orientation = StackOrientation.Horizontal, 
+                Children = { needsTitle, NEEDS},
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+
+            Label wantTitle = new Label()
             {
-                Text = "Wants: " + wants,
-                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
+                Text = "Wants: ",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
-            }; Label LIKES = new Label()
+            }; 
+            Label WANTS = new Label()
             {
-                Text = "Likes: " + likes,
+                Text = wants,
                 FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
                 VerticalOptions = LayoutOptions.CenterAndExpand
+            }; 
+            StackLayout wantStack = new StackLayout 
+            { 
+                Orientation = StackOrientation.Horizontal, 
+                Children = { wantTitle, WANTS },
+                VerticalOptions = LayoutOptions.CenterAndExpand 
+            };
+
+
+            Label likesTitle = new Label()
+            {
+                Text = "Likes: ",
+                FontSize = Device.GetNamedSize(NamedSize.Medium, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+
+            Label LIKES = new Label()
+            {
+                Text = likes,
+                FontSize = Device.GetNamedSize(NamedSize.Small, typeof(EntryCell)),
+                VerticalOptions = LayoutOptions.CenterAndExpand
+            };
+            StackLayout likeStack = new StackLayout 
+            { 
+                Orientation = StackOrientation.Horizontal, 
+                Children = { likesTitle, LIKES },
+                VerticalOptions = LayoutOptions.CenterAndExpand 
             };
 
 
 
             stack = new StackLayout();
             var grid = new Grid();
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+
             grid.Children.Add(image, 0, 0);
-            grid.Children.Add(name, 0, 2);
-            grid.Children.Add(NEEDS, 0, 4);
-            grid.Children.Add(WANTS, 0, 6);
-            grid.Children.Add(LIKES, 0, 8);
+            grid.Children.Add(name, 0, 1);
+
+            stack.Children.Add(needStack);
+            stack.Children.Add(wantStack);
+            stack.Children.Add(likeStack);
+
+            grid.Children.Add(stack, 0, 2);
 
             
+            Content = grid;
+		}
 
-            stack.Children.Add(grid);
+		protected override bool OnBackButtonPressed()
+		{
+            //(this.Parent as CommunityPage)
 
-            
-            Content = stack;
+            return base.OnBackButtonPressed();
 		}
 	}
 }

@@ -157,6 +157,12 @@
     <BundleResource Include="Resources\lit-mike.jpg" />
     <BundleResource Include="Resources\simple-doug.jpg" />
     <BundleResource Include="Resources\john_smith.png" />
+    <BundleResource Include="Resources\agree_tapped.png" />
+    <BundleResource Include="Resources\disagree_tapped.png" />
+    <BundleResource Include="Resources\i_did_it_tapped.png" />
+    <BundleResource Include="Resources\i_fixed_it_tapped.png" />
+    <BundleResource Include="Resources\dirty_dishes.jpg" />
+    <BundleResource Include="Resources\lit-mike.png" />
   </ItemGroup>
   <Import Project="..\Olyfaunt\Olyfaunt.projitems" Label="Shared" Condition="Exists('..\Olyfaunt\Olyfaunt.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
