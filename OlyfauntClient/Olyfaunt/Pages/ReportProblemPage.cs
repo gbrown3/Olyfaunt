@@ -43,7 +43,7 @@ namespace Olyfaunt
                     BackgroundColor = Color.Gray
                 };
 
-                User placeholderUser = new User();
+                User placeholderUser = new User("john_smith.png");
                 placeholderUser.Username = "John Smith";
                 PostProblem(new Problem(placeholderUser, image));    // TODO: replace this with the current app user
             }

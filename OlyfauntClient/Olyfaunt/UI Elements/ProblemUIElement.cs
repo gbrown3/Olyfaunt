@@ -13,6 +13,7 @@ namespace Olyfaunt
 
             // Initialize layout
             HeightRequest = 400;
+            Padding = new Thickness(5, 0);
             HorizontalOptions = LayoutOptions.FillAndExpand;
             VerticalOptions = LayoutOptions.FillAndExpand;
 
@@ -53,10 +54,30 @@ namespace Olyfaunt
             Children.Add(profileImage, 0, 0);
             Grid.SetRowSpan(profileImage, 2);
 
-            Children.Add(new Image { Source = "agree.png" }, 0, 3 );
-            Children.Add(new Image { Source = "disagree.png" }, 1, 3);
-            Children.Add(new Image { Source = "i_did_it.png" }, 2, 3);
-            Children.Add(new Image { Source = "i_fixed_it.png" }, 3, 3);
+            Children.Add(new Image 
+            { 
+                Source = "agree.png", 
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }, 0, 3 );
+            Children.Add(new Image 
+            { 
+                Source = "disagree.png",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }, 1, 3);
+            Children.Add(new Image 
+            { 
+                Source = "i_did_it.png",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }, 2, 3);
+            Children.Add(new Image 
+            { 
+                Source = "i_fixed_it.png",
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.Center
+            }, 3, 3);
 
         }
     }
