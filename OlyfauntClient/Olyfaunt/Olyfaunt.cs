@@ -23,7 +23,7 @@ namespace Olyfaunt
 
     public class App : Application
     {
-        public List<User> Database { get; private set; }
+        public static List<User> Database { get; private set; }
 
         public static IAuthenticate Authenticator { get; private set; }
 

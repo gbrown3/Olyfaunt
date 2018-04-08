@@ -9,7 +9,7 @@ namespace Olyfaunt
     {
         public ProblemUIElement(Problem problem)
         {
-            BackgroundColor = Color.Red;
+            BackgroundColor = Color.FromHex("F10F0F");
 
             // Initialize layout
             HeightRequest = 400;

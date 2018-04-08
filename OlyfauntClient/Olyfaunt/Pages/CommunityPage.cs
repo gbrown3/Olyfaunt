@@ -19,11 +19,9 @@ namespace Olyfaunt
 
             Padding = new Thickness(5, 5);
 
-            for (int i = 0; i < 40; i++)
+            foreach (User user in App.Database)
             {
-                User exampleUser = new User();
-                exampleUser.Username = "User # " + i;
-                stack.Children.Add(new UserUIElement(exampleUser));
+                stack.Children.Add(new UserUIElement(user));
             }
 
             scroller.Content = stack;
