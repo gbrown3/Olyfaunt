@@ -6,8 +6,12 @@ namespace Olyfaunt
 {
     public class PostPage : ContentPage
     {
-        public PostPage()
+        private FeedPage feedPage;
+
+        public PostPage(FeedPage feedPage)
         {
+            this.feedPage = feedPage;
+
             Title = "Post";
             Icon = "plus.png";
 
@@ -20,50 +24,44 @@ namespace Olyfaunt
                 VerticalOptions = LayoutOptions.CenterAndExpand
             };
 
-            pickPictureButton.Clicked += async (sender, e) => 
-            {
-                System.Diagnostics.Debug.WriteLine("Button was clicked");
-                pickPictureButton.IsEnabled = false;
-
-                System.Diagnostics.Debug.WriteLine("About to run IPicturePicker stream");
-                Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
-                System.Diagnostics.Debug.WriteLine("Finished running IPicturePickerStream");
-
-                if (stream != null)
-                {
-                    System.Diagnostics.Debug.WriteLine("Image Stream wasn't null!");
-
-                    Image image = new Image
-                    {
-                        Source = ImageSource.FromStream(() => stream),
-                        BackgroundColor = Color.Gray
-                    };
-
-                    /*
-                    TapGestureRecognizer recognizer = new TapGestureRecognizer();
-                    recognizer.Tapped += (sender2, args) =>
-                    {
-                        (this as ContentPage).Content = stack;
-                        pickPictureButton.IsEnabled = true;
-                    };
-                    image.GestureRecognizers.Add(recognizer);
-
-
-                    (this as ContentPage).Content = image;
-                    */
-                    stack.Children.Add(image);
-                }
-                else
-                {
-                    System.Diagnostics.Debug.WriteLine("Image Stream was null!");
-                    pickPictureButton.IsEnabled = true;
-                }
-            };
+            pickPictureButton.Clicked += OnPickPictureButtonClicked;
 
 
             stack.Children.Add(pickPictureButton);
 
             Content = stack;
+        }
+
+
+
+
+        async void OnPickPictureButtonClicked (object sender, EventArgs e)
+        {
+            (sender as Button).IsEnabled = false;
+
+            Stream stream = await DependencyService.Get<IPicturePicker>().GetImageStreamAsync();
+            if (stream != null)
+            {
+                Image image = new Image
+                {
+                    Source = ImageSource.FromStream(() => stream),
+                    BackgroundColor = Color.Gray
+                };
+
+                PostProblem(new Problem(new User(), image));    // TODO: replace this with the current app user
+            }
+
+            (sender as Button).IsEnabled = true;
+        }
+
+        /// <summary>
+        /// Post problem to community feed and go back to community feed
+        /// </summary>
+        /// <param name="problem">Problem.</param>
+        private void PostProblem(Problem problem)
+        {
+            feedPage.AddUIElementToTop(new ProblemUIElement(problem));
+            (this.Parent as TabbedPage).CurrentPage = feedPage;
         }
     }
 }

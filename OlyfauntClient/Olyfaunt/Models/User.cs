@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Xamarin.Forms;
+using System.Collections.Generic;
 using Olyfaunt.Abstractions;
 
 
-namespace Olyfaunt.Utilities
+namespace Olyfaunt
 {
     /**
      * This class is the client side class for the user. 
@@ -17,6 +18,7 @@ namespace Olyfaunt.Utilities
         public List<string> Needs { get; private set; }
         public List<string> Wants { get; private set; }
         public List<string> Likes { get; private set; }
+        public Image profileImage { get; set; }
 
         public void AddNeed(string need)
         {
@@ -31,6 +33,11 @@ namespace Olyfaunt.Utilities
         public void AddLike(string like)
         {
             Likes.Add(like);
+        }
+
+        public User()
+        {
+            profileImage = new Image { Source = "default_profile_pic.png" };
         }
     }
 }

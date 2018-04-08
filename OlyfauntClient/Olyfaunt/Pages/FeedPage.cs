@@ -29,6 +29,16 @@ namespace Olyfaunt
 
             Content = scroller;
         }
+
+        /// <summary>
+        /// Add a new event or problem to the top of the feed
+        /// </summary>
+        /// <param name="UIElement">UIE lement.</param>
+        public void AddUIElementToTop(Layout UIElement)       // TODO: figure out if we should be more specific. I think most UI elements will be a collection of elements, so a Layout works
+        {
+            feedStack.Children.Add(UIElement);
+            feedStack.LowerChild(UIElement);
+        }
     }
 }
 

@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Xamarin.Forms;
 namespace Olyfaunt
 {
     /// <summary>
@@ -8,19 +8,19 @@ namespace Olyfaunt
     public class Problem
     {
         private User reportingUser;
-        private string problemImage;
+        private Image problemImage;
 
         public User ReportingUser
         {
             get { return reportingUser; }
         }
-        public string ProblemImage
+        public Image ProblemImage
         {
             get { return problemImage; }
         }
 
 
-        public Problem(User reportingUser, string problemImage)
+        public Problem(User reportingUser, Image problemImage)
         {
             this.reportingUser = reportingUser;
             this.problemImage = problemImage;

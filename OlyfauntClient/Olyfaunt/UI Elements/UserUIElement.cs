@@ -8,20 +8,12 @@ namespace Olyfaunt
     public class UserUIElement : Grid
     {
         const int userUIElHeight = 100;
-        private string username;    // internal storage of username
+        public User user { get; private set;  }    // internal storage of username
 
-        public string Username
+
+        public UserUIElement(User user)
         {
-            get
-            {
-                return this.username;
-            }
-        }
-
-
-        public UserUIElement(string username)
-        {
-            this.username = username;
+            this.user = user;
             // Get info from server about profile
 
             // Layout specifications
@@ -35,14 +27,14 @@ namespace Olyfaunt
             // Add in user data
             Label usernameLabel = new Label
             {
-                Text = username,
+                Text = user.Username,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
                 VerticalOptions = LayoutOptions.CenterAndExpand,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
             };
 
-            Children.Add(new BoxView { Color = Color.Purple }, 0, 0);   // TODO: replace with user's profile image
+            Children.Add(user.profileImage, 0, 0);
             Children.Add(usernameLabel, 1, 0);
 
 

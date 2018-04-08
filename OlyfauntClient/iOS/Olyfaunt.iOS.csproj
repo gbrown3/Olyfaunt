@@ -146,6 +146,8 @@
   <ItemGroup>
     <BundleResource Include="Resources\plus.png" />
     <BundleResource Include="Resources\house.png" />
+    <BundleResource Include="Resources\community_members.png" />
+    <BundleResource Include="Resources\default_profile_pic.png" />
   </ItemGroup>
   <Import Project="..\Olyfaunt\Olyfaunt.projitems" Label="Shared" Condition="Exists('..\Olyfaunt\Olyfaunt.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
