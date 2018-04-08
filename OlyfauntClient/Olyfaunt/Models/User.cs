@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Xamarin.Forms;
+using System.Collections.Generic;
 using Olyfaunt.Abstractions;
 
 
@@ -17,6 +18,7 @@ namespace Olyfaunt.Utilities
         public List<string> Needs { get; private set; }
         public List<string> Wants { get; private set; }
         public List<string> Likes { get; private set; }
+        public Image profileImage { get; set; }
 
         public void AddNeed(string need)
         {
