@@ -20,7 +20,7 @@ namespace Olyfaunt
             this.HeightRequest = userUIElHeight;
             Padding = new Thickness(5, 0);
 
-            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star)});    // Add columns so that user profile takes up 1/5 of UI element
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(3, GridUnitType.Star) });    // Add columns so that user profile takes up 1/5 of UI element
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(8, GridUnitType.Star) });
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
@@ -33,6 +33,14 @@ namespace Olyfaunt
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center
             };
+
+            TapGestureRecognizer tgrLabel = new TapGestureRecognizer();
+            tgrLabel.Tapped += (sender, e) =>
+            {
+                Navigation.PushModalAsync(new ViewProfile());
+            };
+
+            usernameLabel.GestureRecognizers.Add(tgrLabel);
 
             Children.Add(user.profileImage, 0, 0);
             Children.Add(usernameLabel, 1, 0);

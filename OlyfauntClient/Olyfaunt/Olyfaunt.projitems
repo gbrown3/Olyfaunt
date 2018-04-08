@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Abstractions\TableData.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Olyfaunt.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\FeedPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewProfile.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\SignInSignUpPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AzureCloudService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\AzureCloudTable.cs" />
@@ -29,7 +30,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
     <Folder Include="$(MSBuildThisFileDirectory)UI Elements\" />
   </ItemGroup>
 </Project>
