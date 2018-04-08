@@ -7,12 +7,10 @@ namespace Olyfaunt.UIElements
     /// </summary>
     public class ProblemUIElement : Grid
     {
-        public ProblemUIElement()
+        public ProblemUIElement(Problem problem)
         {
             // Initialize layout
-            //VerticalOptions = new LayoutOptions
 
-            //RowDefinitions.Add(new RowDefinition { Height = new GridLength()});
         }
     }
 }
