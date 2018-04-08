@@ -14,10 +14,39 @@ namespace Olyfaunt
             HorizontalOptions = LayoutOptions.FillAndExpand;
             VerticalOptions = LayoutOptions.FillAndExpand;
 
-            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
-            Children.Add(problem.ProblemImage, 0, 0);
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+
+
+            // Add in elements
+            Children.Add(problem.ProblemImage, 0, 2);
+            Grid.SetColumnSpan(Children[0], 4);
+
+
+            Label problemTitleLabel = new Label
+            {
+                Text = "thinks this is a\nPROBLEM",
+                TextColor = Color.White,
+                HorizontalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.Fill,
+                VerticalOptions = LayoutOptions.Fill
+            };
+            Grid.SetColumnSpan(problemTitleLabel, 3);
+            Grid.SetRowSpan(problemTitleLabel, 2);
+
+            Children.Add(problemTitleLabel, 1, 0);
+
+
+            //Image profileImage = problem.ReportingUser
         }
     }
 }
