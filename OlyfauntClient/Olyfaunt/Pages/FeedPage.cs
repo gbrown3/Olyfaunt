@@ -20,14 +20,40 @@ namespace Olyfaunt
             feedStack = new StackLayout();
             Padding = new Thickness(5, 5);
 
-            for (int i = 0; i < 40; i++) {
-                feedStack.Children.Add(new EventUIElement(new Event("Event" + i, "Sick event bro", "April 20", "4:20 pm" )));
-            }
+            FillWithSampleEvents();
 
             scroller = new ScrollView();
             scroller.Content = feedStack;
 
             Content = scroller;
+        }
+
+        private void FillWithSampleEvents()
+        {
+            feedStack.Children.Add(new EventUIElement(new Event(
+                "Scrabble",
+                "If you want a chill night, come play scrabble in library room 232.",
+                "4/13/2018",
+                "8:30 PM"
+            )));
+            feedStack.Children.Add(new EventUIElement( new Event(
+                "Smash Tournament", 
+                "Time to smash! Come down to the lounge to get your smash bros on!", 
+                "4/14/2018", 
+                "7:00 PM"
+            )));
+            feedStack.Children.Add(new EventUIElement(new Event(
+                "Watch Mr. Robot",
+                "I'm trying to catch up on Mr.Robot in the lounge, if anyone feels like joining I can make some popcorn",
+                "4/21/2018",
+                "10:00 PM"
+            )));
+            feedStack.Children.Add(new EventUIElement(new Event(
+                "Cocoa and Cookies",
+                "I'll be making hot cocoa and cookies, so please come by Room 456 if you want try some",
+                "4/30/2018",
+                "9:30 PM"
+            )));
         }
 
         /// <summary>

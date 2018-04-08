@@ -10,7 +10,7 @@ namespace Olyfaunt
             // Initialize layout
             BackgroundColor = Color.FromHex("56A6F1");
             RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+            RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
@@ -19,7 +19,7 @@ namespace Olyfaunt
             { 
                 Text = e.Name,
                 TextColor = Color.White,
-                //Font = "",
+                FontAttributes = FontAttributes.Bold,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,
                 HorizontalOptions = LayoutOptions.Center,
@@ -28,19 +28,20 @@ namespace Olyfaunt
 
 
 
-            Grid descriptionGrid = new Grid();
+            Grid descriptionGrid = new Grid{ Padding = new Thickness(5, 0, 0, 3) };
             descriptionGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             descriptionGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
-            descriptionGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
+            descriptionGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(5, GridUnitType.Star) });
 
             Label whatLabel = new Label
             {
                 Text = "What: ",
                 TextColor = Color.White,
+                FontAttributes = FontAttributes.Italic,
                 HorizontalTextAlignment = TextAlignment.Center,
-                VerticalTextAlignment = TextAlignment.Center,
+                VerticalTextAlignment = TextAlignment.End,
                 HorizontalOptions = LayoutOptions.CenterAndExpand,
-                VerticalOptions = LayoutOptions.CenterAndExpand
+                VerticalOptions = LayoutOptions.Center
             };
             Label descriptionLabel = new Label
             {
@@ -56,7 +57,7 @@ namespace Olyfaunt
             descriptionGrid.Children.Add(descriptionLabel, 0, 1);
 
 
-            Grid dateGrid = new Grid();
+            Grid dateGrid = new Grid {Padding = new Thickness(0, 0, 0, 3)};
             dateGrid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             dateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             dateGrid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(3, GridUnitType.Star) });
@@ -64,7 +65,8 @@ namespace Olyfaunt
 
             Label whenLabel = new Label                         
             {
-                Text = "When: ",            
+                Text = "When: ",
+                FontAttributes = FontAttributes.Italic,
                 TextColor = Color.White,
                 HorizontalTextAlignment = TextAlignment.Center,
                 VerticalTextAlignment = TextAlignment.Center,

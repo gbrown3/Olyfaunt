@@ -5,7 +5,7 @@ namespace Olyfaunt
     public class Event
     {
         const int MAX_NUM_NAME_CHARS = 32;
-        const int MAX_NUM_DESC_CHARS = 100;
+        const int MAX_NUM_DESC_CHARS = 200;
         private string name;
         private string description;
         private string date;    // For now have users fill these in-- ideally they would have a nice way to select them

@@ -37,7 +37,7 @@ namespace Olyfaunt
             TapGestureRecognizer tgrLabel = new TapGestureRecognizer();
             tgrLabel.Tapped += (sender, e) =>
             {
-                Navigation.PushModalAsync(new ViewProfile(user));
+                Navigation.PushAsync(new NavigationPage(new ViewProfile(user)));
             };
 
             usernameLabel.GestureRecognizers.Add(tgrLabel);

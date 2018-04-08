@@ -15,6 +15,8 @@ namespace Olyfaunt
 		public ViewProfile (User user)
 		{
             this.user = user;
+            //NavigationPage.SetHasNavigationBar(this, true);
+            NavigationPage.SetHasBackButton(this, true);
             Image image = user.profileImage;
             Label name = new Label()
             {
